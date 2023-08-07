@@ -12,6 +12,13 @@ spring:
       url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: 123
+
+  redis:
+    host: 192.168.37.107
+    port: 6379
+    password: 12345678
+    database: 0
+
   #上传图片最大的大小和总大小
   servlet:
     multipart:
