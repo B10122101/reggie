@@ -14,10 +14,13 @@ spring:
       password: 123
 
   redis:
-    host: 192.168.37.107
+    host: 127.0.0.1
     port: 6379
-    password: 12345678
     database: 0
+
+  cache:
+    redis:
+      time-to-live: 1800000 #缓存有效时间， 
 
   #上传图片最大的大小和总大小
   servlet:
