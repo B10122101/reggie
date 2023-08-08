@@ -11,8 +11,6 @@ import com.bx.reggie.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,7 +33,6 @@ public class SetmealController {
 	
 	//添加套餐
 	@PostMapping
-	@CacheEvict(value = "setmealCache",allEntries = true)//删除setmealCache缓存中的所有数据
 	public R<String> save(@RequestBody SetmealDto setmealDto) {
 		setmealService.saveWithDish(setmealDto);
 		return R.success("添加套餐成功");
@@ -88,15 +85,13 @@ public class SetmealController {
 	
 	//删除套餐
 	@DeleteMapping
-	@CacheEvict(value = "setmealCache",allEntries = true)
 	public R<String> delete(@RequestParam List<Long> ids) {
 		setmealService.removeWithDish(ids);
 		return R.success("删除成功");
 	}
 	
 	
-	@Cacheable(value = "setmealCache",key = "#setmeal.categoryId+'_'+#setmeal.status")
-	//添加缓存，缓存名字叫Setmeal，缓存的key为套餐分类id_在售状态，该方法的返回值为缓存数据
+	
 	@GetMapping("/list")
 	public R<List<Setmeal>> list(Setmeal setmeal){
 		//构造条件过滤器
