@@ -1,2 +1,2 @@
 # reggie
-Java瑞吉外卖项目（BX）
+Java项目（BX）
