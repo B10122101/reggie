@@ -16,6 +16,8 @@ public class ReggieApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ReggieApplication.class, args);
+
+		/**	   提交新版本*/
 	}
 	
 }
