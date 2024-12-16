@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @author BX
  * @version 1.0
  * @date 2023/8/2 9:51
+ * @description 远程新增1
  */
 @Configuration
 //mybatis-plus分页插件
